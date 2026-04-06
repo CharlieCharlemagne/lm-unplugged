@@ -103,6 +103,8 @@ preset = Table.from_csv('init.csv')
 preset.get_df()
 ```
 
+Each row represents a context (previous words) and the columns represent the next possible words. Note--the numbers are counts! How many times each next workd was observed after that context during training?
+
 We will represent this physically with four bins (for each possible previous word) and five different colored balls (for each possible next word): 
 
 ```{code-cell} python
@@ -110,7 +112,11 @@ We will represent this physically with four bins (for each possible previous wor
 preset
 ```
 
+Each bin is labeled with a color (the context) and filled with balls. The color of each ball represents a potential new word and the number of balls of each color reflects how likely that next word is. 
+
 ### Generating Documents
+
+With our newly trained model, we can use it to generate new sequences. We start with a prompt (a starting color), we look up the matching bin, we randomly draw a ball, and add that color to the document. We repeat the process until we draw a white ball--which signifies the end of the document.
 
 ```{code-cell} python
 :tags: [remove-input]
@@ -154,6 +160,8 @@ while not(sampled_word=='white'):
 doc
 ```
 
+The model kept sampling at each step using the most recent color context to look up the next bin until it drew white. The result is a complete generated sequence that was not copied from the training data--but it reflects the same pattern.
+
 Let's  prompt with a few more times and draw additional documents. 
 
 ```{code-cell} python
@@ -170,10 +178,11 @@ preset.sample_doc('purple')
 :tags: [remove-input]
 preset.sample_doc('green')
 ```
+Note that each document is different even when starting with the same prompt. This is because we draw balls at random--whats in the bin determines the probabilities, but randomness determines the actual outcome each time. Some of these documents can be short and some can turn out long. This is the variability that you would see in real language models, where a prompt can generate different responses each time. 
 
 ### Training
 
-
+Training is the process of reading through a document and filling the bins based of what patterns that we observed. 
 
 We can prepare to demo the training process from a fixed document: 
 

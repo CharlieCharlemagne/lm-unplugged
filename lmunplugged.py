@@ -816,6 +816,7 @@ class StickyContainer(ImgObj):
         elif isinstance(to_add,Sticky):
             new_word = to_add
         
+        new_word.set_size(self.sticky_width, self.sticky_height) #SHOULD FIX THE LABEL
         new_word.set_location(self.get_next_word_loc())
         self.words.append(new_word)
         
@@ -962,7 +963,7 @@ class Label(StickyContainer):
     container for multiple stickes to be used as a label on a bin
     '''
     
-    def __init__(self, labels, word_spacing= 5, sticky_width=12, sticky_height=8): # change the numbers MAYBE, trace out and see
+    def __init__(self, labels, word_spacing= 5, sticky_width=30, sticky_height=20): # change the numbers MAYBE, trace out and see
         if isinstance(labels,list):
             context_length = len(labels)
         else:
