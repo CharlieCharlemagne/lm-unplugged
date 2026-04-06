@@ -962,7 +962,7 @@ class Label(StickyContainer):
     container for multiple stickes to be used as a label on a bin
     '''
     
-    def __init__(self, labels, word_spacing= 5, sticky_width=30, sticky_height=20):
+    def __init__(self, labels, word_spacing= 5, sticky_width=12, sticky_height=8): # change the numbers MAYBE, trace out and see
         if isinstance(labels,list):
             context_length = len(labels)
         else:

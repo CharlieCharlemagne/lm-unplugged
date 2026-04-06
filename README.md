@@ -8,6 +8,9 @@ dependencies:
 - myst
 - jupyter
 
+```bash
+pip install -r requirements.txt
+```
 
 run the following: 
 ```bash
