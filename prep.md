@@ -1,7 +1,7 @@
 # How to setup for in person
 This a walkthrough on how to install and configure the activity. By the end, you should have a working Python environment with the project library and should be able to view the activity locally!
 
-## Prerequites (recommended)
+### Prerequisites (recommended)
 Before you begin, make sure you have the following already installed on your machine:
 
 - Python 3.9 or higher — you can check by running python --version in your terminal. If you don't have Python, download it from python.org.
