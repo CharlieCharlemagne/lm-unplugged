@@ -116,7 +116,7 @@ Each bin is labeled with a color (the context) and filled with balls. The color 
 
 ### Generating Documents
 
-With our newly trained model, we can use it to generate new sequences. We start with a prompt (a starting color), we look up the matching bin, we randomly draw a ball, and add that color to the document. We repeat the process until we draw a white ball--which signifies the end of the document.
+With our pretrained model, we can use it to generate new sequences. We start with a prompt (a starting color), we look up the matching bin, we randomly draw a ball, and add that color to the document. We repeat the process until we draw a white ball--which signifies the end of the document.
 
 ```{code-cell} python
 :tags: [remove-input]
