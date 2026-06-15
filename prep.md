@@ -1,4 +1,6 @@
-# How to setup for in person
+# Setup
+
+## Low Code Activity
 This a walkthrough on how to install and configure the activity. By the end, you should have a working Python environment with the project library and should be able to view the activity locally!
 
 ### Prerequisites (recommended)
