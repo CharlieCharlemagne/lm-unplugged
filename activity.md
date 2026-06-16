@@ -182,7 +182,7 @@ Note that each document is different even when starting with the same prompt. Th
 
 ### Training
 
-Training is the process of reading through a document and filling the bins based of what patterns that we observed. 
+Training is the process of creating a model from a set of documents. In computers, this is implemented by a machine learning algorithm. Here, we will do it by filling the bins with balls. 
 
 We can prepare to demo the training process from a fixed document: 
 
